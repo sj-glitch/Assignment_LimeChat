@@ -1,0 +1,65 @@
+version: "2.0"
+
+intents:
+  - faq
+  - request_reservation
+  - inform
+  - time_slot
+  - room_type
+
+
+responses:
+  utter_faq/ask_timing:
+  - text: The restaurant opens at 7pm and closes at 10pm.
+  utter_faq/ask_opening_days:
+  - text: The restaurant is open each and every day.
+  utter_faq/ask_cancel_reservation:
+  - text: To cancel a reservation, simply call us at +91 9876543210 and cancel your reservation
+  utter_faq/ask_speciality:
+  - text: Our chef is a master of the Italian cuisine. Our core speciality is our pasta, which is renowned throughout the city.
+
+  utter_welcome:
+    - text: Hi there! What can I help you with today?
+  utter_ask_num_people:
+    - text: How many seats would you like to reserve
+  utter_ask_time_slot:
+    - text: What is your time slot?
+  utter_ask_room_type:
+    - text: Which section would you like to book\n
+            AC\n
+            Non_AC
+  utter_ask_booking_slot:
+    - text: When would you like to book a reservation? (We are only open from 7pm to 10pm)
+  utter_slots_values:
+    - text: You have reserved {num_people} in our {room_type} section for {time_slot}. Thanks!
+
+
+forms:
+  restaurant_form:
+    required_slots:
+        num_people:
+          - type: from_text
+        room_type:
+          - type: from_text
+        time_slot:
+          - type: from_text
+
+
+slots:
+  time_slot:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  num_people:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  room_type:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
