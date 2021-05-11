@@ -1,0 +1,43 @@
+version: "2.0"
+
+
+stories:
+- story: Flow 1
+  steps:
+  - user: |
+      I want to reserve a table
+    intent: request_reserve
+  - action: restaurant_form
+  - active_loop: restaurant_form
+  - user: |
+      2 seats
+    intent: inform
+  - action: restaurant_form
+  - active_loop: restaurant_form
+  - user: |
+      AC
+    intent: room_type
+  - action: restaurant_form
+  - active_loop: restaurant_form
+  - user: |
+      7:30
+    intent: time_slot
+  - action: restaurant_form
+  - active_loop: null
+  - action: utter_slots_values
+
+- story: Flow 2
+  steps:
+  - user: |
+      User: I want to reserve a table for a party of 4
+    intent: inform
+  - action: restaurant_form
+  - active_loop: restaurant_form
+  - user: |
+      8:10
+    intent: time_slot
+  - action: restaurant_form
+  - active_loop: null
+  - action: utter_slots_values
+
+

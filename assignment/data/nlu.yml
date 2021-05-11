@@ -1,0 +1,61 @@
+version: "2.0"
+
+
+nlu:
+  - intent: faq/ask_timing
+    examples: |
+      - What is the timing?
+      - When do you close?
+      - What time is last order?
+      - When does the kitchen close?
+      - What are your timing?
+      - How many hour do you serve?
+  - intent: faq/ask_opening_days
+    examples: |
+      - What days are you open?
+      - Are you open all the week?
+      - Does it open in Sunday?
+      - Does it open in Saturday
+  - intent: faq/ask_cancel_reservation
+    examples: |
+      - How do I cancel a reservation?
+      - I want to cancel a reservation.
+      - What is the process of cancel a reservation?
+      - What if someone has to cancel a reservation?
+      - Can I cancel a reservation?
+  - intent: faq/ask_speciality
+    examples: |
+      - What are the specials?
+      - How is this dish prepared?
+
+
+  - intent: request_reservation
+    examples: |
+      - I want to reserve a table
+      - How can I reserve a table?
+      - Can I reserve the table for 5 people?
+
+  - intent: inform
+    examples: |
+      - for ten people
+      - 2 people
+      - for three people
+      - just one person
+      - book for seven people
+      - 2 please
+      - nine people
+      - 2 seats
+      - only single seat
+      - User: I want to reserve a table for a party of 4
+  - intent: room_type
+    examples: |
+      - AC
+      - Non-AC
+
+  - intent: time_slot
+    examples: |
+      - 7:30
+      - 7:00
+      - 8:00
+      - 8:30
+      - 9:30
